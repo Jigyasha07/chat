@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hirebie Chat</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+      height: 480px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 9999;
+    }
+
+    #chat-header {
+      background-color: #ff6600;
+      color: white;
+      padding: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    #chatbox {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+      background-color: #f9f9f9;
+    }
+
+    .message {
+      margin: 6px 0;
+      padding: 6px 10px;
+      border-radius: 6px;
+      max-width: 80%;
+    }
+
+    .user {
+      background-color: #d1e7ff;
+      align-self: flex-end;
+      text-align: right;
+    }
+
+    .bot {
+      background-color: #eee;
+      align-self: flex-start;
+      text-align: left;
+    }
+
+    #input-area {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    #userInput {
+      flex: 1;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    #sendBtn {
+      margin-left: 8px;
+      padding: 8px 12px;
+      font-size: 14px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #sendBtn:hover {
+      background-color: #e65c00;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-widget">
+    <div id="chat-header">Hirebie Chat</div>
+    <div id="chatbox"></div>
+    <div id="input-area">
+      <input type="text" id="userInput" placeholder="Type a message..." />
+      <button id="dictateBtn">🎤</button>
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById("userInput");
+    const sendBtn = document.getElementById("sendBtn");
+    const dictateBtn = document.getElementById("dictateBtn");
+
+    function appendMessage(sender, text) {
+      const chatbox = document.getElementById("chatbox");
+      const msg = document.createElement("div");
+      msg.className = "message " + (sender === "You" ? "user" : "bot");
+      msg.textContent = text;
+      chatbox.appendChild(msg);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    function sendMessage() {
+      const message = input.value.trim();
+      if (!message) return;
+
+      appendMessage("You", message);
+      input.value = "";
+
+      fetch("http://localhost:5000/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message })
+      })
+      .then(res => res.json())
+      .then(data => {
+        appendMessage("Bot", data.reply);
+      })
+      .catch(err => {
+        console.error("Fetch error:", err);
+        appendMessage("Bot", "⚠️ Sorry, something went wrong.");
+      });
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+    input.addEventListener("keypress", function(e) {
+      if (e.key === "Enter") sendMessage();
+    });
+    dictateBtn.addEventListener("click", () => {
+      if (!('webkitSpeechRecognition' in window)) {
+        alert("Speech recognition not supported in this browser.");
+        return;
+      }
+
+      const recognition = new webkitSpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = "en-US";
+
+      recognition.start();
+
+      recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        sendMessage(transcript);
+      };
+      recognition.onerror = function(event) {
+        console.error("Speech recognition error:", event.error);
+        appendMessage("Bot", "⚠️ Dictation error: " + event.error);
+      };
+    });
+    window.addEventListener("load", () => {
+      appendMessage("Bot", "👋 Hi there! How can I assist you today?");
+    });
+
+  </script>
+</body>
+</html>

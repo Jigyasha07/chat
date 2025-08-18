@@ -1,0 +1,7 @@
+flask
+flask-cors
+flask-limiter
+transformers
+requests
+python-dotenv
+gunicorn
