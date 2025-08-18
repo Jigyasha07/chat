@@ -1,0 +1,147 @@
+body {
+  background: #f8f9ff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.chat-container {
+  width: 400px;
+  max-height: 600px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background: #f60;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.chat-title {
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #4caf50;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.chat-status {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+.chat-body::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-body::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+.bot-message,
+.msg-bot {
+  background: #eef2ff;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 80%;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.user-message,
+.msg-user {
+  background: #2f3640;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-bottom: 10px;
+  align-self: flex-end;
+}
+
+.typing {
+  font-style: italic;
+  opacity: 0.6;
+}
+
+.btn-group {
+  margin-top: 8px;
+}
+
+.chat-btn {
+  background: #5a46f0;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.chat-btn:hover {
+  background: #4b38d0;
+}
+
+.chat-footer {
+  padding: 8px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  gap: 8px;
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.chat-footer button {
+  padding: 8px 12px;
+  border: none;
+  background: #5a46f0;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.chat-footer button:hover {
+  background: #4b38d0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .chat-container {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
