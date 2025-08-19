@@ -1,13 +1,20 @@
+// =====================
 // Backend URL
+// =====================
 const API_URL = "https://chat-yvmf.onrender.com";
 
-// DOM elements
+// =====================
+// DOM Elements
+// =====================
 const inputBox = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
 const micBtn = document.getElementById("mic-button");
 const chatBox = document.getElementById("chat-box");
+const recordingIndicator = document.getElementById("recording-indicator");
 
+// =====================
 // Display messages
+// =====================
 function displayMessage(sender, message) {
   const msgDiv = document.createElement("div");
   msgDiv.className = sender;
@@ -16,7 +23,9 @@ function displayMessage(sender, message) {
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// Send message to backend
+// =====================
+// Send text message to backend
+// =====================
 function sendMessage() {
   const message = inputBox.value.trim();
   if (!message) return;
@@ -33,47 +42,61 @@ function sendMessage() {
     .catch(err => displayMessage("bot", "⚠️ Something went wrong."));
 }
 
-// Button click
+// Send button click
 sendBtn.onclick = sendMessage;
+
+// Enter key press
 inputBox.addEventListener("keypress", e => {
   if (e.key === "Enter") sendMessage();
 });
 
-// ----------------------
-// Bulletproof Dictation
-let recognition;
-
-if (!("webkitSpeechRecognition" in window) && !("SpeechRecognition" in window)) {
-  alert("⚠️ Your browser does not support speech recognition. Please use Chrome or Edge.");
-} else {
-  recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-  recognition.lang = "en-US";
-  recognition.interimResults = false;
-
-  recognition.onstart = () => console.log("🎤 Microphone started...");
-  recognition.onresult = (event) => {
-    const transcript = event.results[0][0].transcript;
-    inputBox.value = transcript;
-    sendMessage(); // Automatically send after dictation
-  };
-  recognition.onerror = (event) => {
-    console.error("Speech recognition error:", event);
-    if (event.error === "not-allowed" || event.error === "service-not-allowed") {
-      alert("⚠️ Microphone access denied. Please allow microphone in your browser.");
-    } else {
-      alert("⚠️ Speech recognition failed. Try again.");
-    }
-  };
-  recognition.onend = () => console.log("🎤 Microphone stopped.");
-}
-
-// Mic button click
-micBtn.onclick = () => {
-  if (!recognition) return;
-  try {
-    recognition.start();
-  } catch (err) {
-    console.error("Recognition start error:", err);
-    alert("⚠️ Cannot start microphone. Please check permissions.");
+// =====================
+// Audio dictation (backend-based)
+// =====================
+micBtn.onclick = async () => {
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    alert("⚠️ Your browser does not support microphone.");
+    return;
   }
-};
+
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    const mediaRecorder = new MediaRecorder(stream);
+    let chunks = [];
+
+    mediaRecorder.ondataavailable = e => chunks.push(e.data);
+    mediaRecorder.onstart = () => {
+      recordingIndicator.style.display = "inline";
+      console.log("🎤 Recording started...");
+    };
+    mediaRecorder.onstop = async () => {
+      recordingIndicator.style.display = "none";
+
+      const blob = new Blob(chunks, { type: "audio/webm" });
+      chunks = [];
+
+      const formData = new FormData();
+      formData.append("audio", blob, "voice.webm");
+
+      try {
+        const res = await fetch(`${API_URL}/dictate`, { method: "POST", body: formData });
+        const data = await res.json();
+        if (data.text) {
+          inputBox.value = data.text;       // Fill input box
+          sendMessage();                     // Auto-send
+        } else {
+          alert("⚠️ Dictation failed: " + (data.error || "Unknown error"));
+        }
+      } catch (err) {
+        console.error(err);
+        alert("⚠️ Failed to send audio to backend.");
+      }
+    };
+
+    // Record 5 seconds
+    mediaRecorder.start();
+    setTimeout(() => mediaRecorder.stop(), 5000);
+
+  } catch (err) {
+    console.error(err);
+    alert("⚠️ Could not access microphone. P
