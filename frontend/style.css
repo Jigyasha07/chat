@@ -123,6 +123,7 @@ body {
   display: flex;
   gap: 8px;
   background-color: #fff;
+  align-items: center;
 }
 
 .chat-footer input {
@@ -147,10 +148,75 @@ body {
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .chat-footer button:hover {
   background: #4b38d0;
+}
+
+/* Microphone button specific */
+#mic-button {
+  font-size: 18px;
+  padding: 8px 12px;
+  background-color: #5a46f0;
+  border-radius: 6px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#mic-button:hover {
+  background-color: #4b38d0;
+}
+
+/* Toggle switch example styling */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #5a46f0;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
 }
 
 /* Responsive tweaks */
@@ -168,6 +234,29 @@ body {
 
   .chat-footer input,
   .chat-footer button {
+    width: 100%;
+  }
+
+  /* Smaller toggle on mobile */
+  .toggle {
+    width: 36px;
+    height: 18px;
+  }
+
+  .slider:before {
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(18px);
+  }
+
+  #mic-button {
+    font-size: 16px;
+    padding: 6px 10px;
     width: 100%;
   }
 }
