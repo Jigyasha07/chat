@@ -79,6 +79,12 @@ def proactive_suggestion(user_message: str) -> str | None:
 def home():
     return "✅ Chatbot API running"
 
+# ✅ NEW: allow POST / as a fallback (no delete, just added)
+@app.route("/", methods=["POST"])
+def root_chat():
+    # reuse the /chat logic
+    return chat()
+
 @app.route("/chat", methods=["POST"])
 def chat():
     user_message = request.json.get("message", "")
@@ -91,6 +97,7 @@ def chat():
         return jsonify({"response": suggestion})
     
     return jsonify({"response": "I'm not sure I understand. Can you rephrase?"})
+
 @app.route("/generate", methods=["POST"])
 def generate():
     user_message = request.json.get("message", "")
@@ -107,6 +114,10 @@ def generate():
     
     generated_text = query_hf_model(user_message)
     return jsonify({"response": generated_text})
+@app.route("/faq", methods=["GET"])
+def get_faq():
+    faq_data = load_faq()
+    return jsonify(faq_data)
     
 if __name__ == "__main__":
    # port = int(os.environ.get("PORT", 5000))
