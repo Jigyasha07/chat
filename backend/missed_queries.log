@@ -1,0 +1,17 @@
+hi
+2025-08-19 09:08:59,463 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.173.83.123:5000
+2025-08-19 09:08:59,464 - [33mPress CTRL+C to quit[0m
+2025-08-19 09:08:59,515 -  * Restarting with watchdog (windowsapi)
+2025-08-19 09:08:59,849 -  * Debugger is active!
+2025-08-19 09:08:59,855 -  * Debugger PIN: 593-146-331
+2025-08-19 09:09:26,146 - 127.0.0.1 - - [19/Aug/2025 09:09:26] "OPTIONS /chat HTTP/1.1" 200 -
+2025-08-19 09:09:26,389 - hello
+2025-08-19 09:09:26,391 - 127.0.0.1 - - [19/Aug/2025 09:09:26] "POST /chat HTTP/1.1" 200 -
+2025-08-19 09:09:42,173 - 127.0.0.1 - - [19/Aug/2025 09:09:42] "OPTIONS /chat HTTP/1.1" 200 -
+2025-08-19 09:09:42,490 - what is hirebie
+2025-08-19 09:09:42,492 - 127.0.0.1 - - [19/Aug/2025 09:09:42] "POST /chat HTTP/1.1" 200 -
+2025-08-19 09:10:44,668 -  * Detected change in 'C:\\Users\\jigya\\OneDrive\\Desktop\\chat\\app.py', reloading
+2025-08-19 09:10:45,557 -  * Restarting with watchdog (windowsapi)
