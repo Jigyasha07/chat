@@ -54,7 +54,7 @@
       input.value = "";
 
       try {
-        const res = await fetch("https://chat-6en7.onrender.com/chat", {
+        const res = await fetch("https://your-backend.onrender.com/chat", {   // 🔹 change this to your backend Render URL
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ message })
@@ -70,28 +70,62 @@
     sendBtn.addEventListener("click", () => sendMessage());
     input.addEventListener("keypress", e => { if (e.key === "Enter") sendMessage(); });
 
-    // 🎤 Mic speech-to-text
-    dictateBtn.addEventListener("click", () => {
-      if (!('webkitSpeechRecognition' in window)) {
-        alert("Speech recognition not supported in this browser.");
+    // 🎤 Dictation with MediaRecorder → Backend Whisper
+    dictateBtn.addEventListener("click", async () => {
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        alert("Microphone not supported in this browser.");
         return;
       }
-      const recognition = new webkitSpeechRecognition();
-      recognition.lang = "en-US";
-      recognition.continuous = false;
-      recognition.interimResults = false;
-      recognition.start();
 
-      recognition.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        sendMessage(transcript);
-      };
-      recognition.onerror = (event) => {
-        console.error("Speech recognition error:", event.error);
-        appendMessage("Bot", "⚠️ Dictation error: " + event.error);
-      };
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const mediaRecorder = new MediaRecorder(stream);
+        let chunks = [];
+
+        mediaRecorder.ondataavailable = e => chunks.push(e.data);
+
+        mediaRecorder.onstop = async () => {
+          const blob = new Blob(chunks, { type: "audio/webm" });
+          const formData = new FormData();
+          formData.append("audio", blob, "speech.webm");
+
+          appendMessage("You", "🎤 Processing voice input...");
+
+          try {
+            const res = await fetch("https://your-backend.onrender.com/dictate", {   // 🔹 change this to your backend Render URL
+              method: "POST",
+              body: formData
+            });
+
+            const data = await res.json();
+            if (data.text) {
+              sendMessage(data.text);
+            } else {
+              appendMessage("Bot", "⚠️ Could not transcribe audio.");
+            }
+          } catch (err) {
+            console.error("Dictation error:", err);
+            appendMessage("Bot", "⚠️ Dictation request failed.");
+          }
+        };
+
+        // Start recording for 5s
+        chunks = [];
+        mediaRecorder.start();
+        dictateBtn.innerText = "⏹️";
+
+        setTimeout(() => {
+          mediaRecorder.stop();
+          dictateBtn.innerText = "🎤";
+        }, 5000);
+
+      } catch (err) {
+        console.error("Mic access denied:", err);
+        alert("Please allow microphone access.");
+      }
     });
 
+    // Initial greeting
     window.addEventListener("load", () => {
       appendMessage("Bot", "👋 Hi there! How can I assist you today?");
     });
