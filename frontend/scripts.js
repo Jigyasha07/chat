@@ -1,6 +1,5 @@
 // Force local API for now
-const API_URL = "http://127.0.0.1:5000"; // Local backend
-// const API_URL = "https://your-backend.onrender.com"; // For deployed backend
+const API_URL = "https://chat-ewrn.onrender.com"; // For deployed backend
 
 // =====================
 // DOM Elements
