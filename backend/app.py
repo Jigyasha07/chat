@@ -1,38 +1,23 @@
-import json
-import os
-import requests
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import json, os, requests
 from dotenv import load_dotenv
 import difflib
-import openai  # Only for Whisper dictation
 
-# --------------------
-# Load environment variables
-# --------------------
-load_dotenv()
-HF_TOKEN = os.getenv("HF_API_KEY")         # Hugging Face API key
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")  # OpenAI key for Whisper
-openai.api_key = OPENAI_API_KEY
-
-# --------------------
-# Flask setup
-# --------------------
 app = Flask(__name__)
 CORS(app)
 
-# --------------------
-# Settings / Files
-# --------------------
+# ---------------- Settings ----------------
 USE_OFFLINE_MODE = True
 FAQ_FILE = os.path.join(os.path.dirname(__file__), "faq.jsonl")
+
+load_dotenv()
+HF_TOKEN = os.getenv("HF_API_KEY")
 MODEL_NAME = "gpt2"
 API_URL = f"https://api-inference.huggingface.co/pipeline/text-generation/{MODEL_NAME}"
 HEADERS = {"Authorization": f"Bearer {HF_TOKEN}"} if HF_TOKEN else {}
 
-# --------------------
-# Helpers for FAQ / Hugging Face
-# --------------------
+# ---------------- Helpers -----------------
 def load_faq():
     items = []
     if os.path.exists(FAQ_FILE):
@@ -73,10 +58,12 @@ def query_hf_model(prompt: str) -> str:
     except Exception as e:
         return f"⚠️ Error connecting to Hugging Face: {e}"
 
+# ---------------- Proactive Suggestions -----------------
 def proactive_suggestion(user_message: str) -> str | None:
     triggers = {
         "hello": "Hi there! How can I assist you today?",
         "hi": "Hello! What can I help you with?",
+        "greeting": "Greetings! How can I assist you today?",
         "apply": "Would you like to see available jobs or upload your resume?",
         "job": "Are you searching for full-time, part-time, or remote jobs?",
         "help": "I can assist with job search, applications, or account support. Which one do you need?",
@@ -87,15 +74,15 @@ def proactive_suggestion(user_message: str) -> str | None:
             return suggestion
     return None
 
-# --------------------
-# Routes
-# --------------------
+# ---------------- Routes ------------------
 @app.route("/", methods=["GET"])
 def home():
     return "✅ Chatbot API running"
 
+# ✅ NEW: allow POST / as a fallback (no delete, just added)
 @app.route("/", methods=["POST"])
 def root_chat():
+    # reuse the /chat logic
     return chat()
 
 @app.route("/chat", methods=["POST"])
@@ -127,35 +114,11 @@ def generate():
     
     generated_text = query_hf_model(user_message)
     return jsonify({"response": generated_text})
-
 @app.route("/faq", methods=["GET"])
 def get_faq():
     faq_data = load_faq()
     return jsonify(faq_data)
-
-# --------------------
-# Dictation endpoint (OpenAI Whisper)
-# --------------------
-@app.route("/dictate", methods=["POST"])
-def dictate():
-    if "audio" not in request.files:
-        return jsonify({"error": "No audio file provided"}), 400
-
-    audio_file = request.files["audio"]
-
-    try:
-        transcription = openai.Audio.transcriptions.create(
-            file=audio_file,
-            model="whisper-1"
-        )
-        text = transcription["text"]
-        return jsonify({"text": text})
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-# --------------------
-# Run app
-# --------------------
+    
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+   # port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True)
