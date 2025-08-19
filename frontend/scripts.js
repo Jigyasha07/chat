@@ -1,15 +1,7 @@
+// --- Backend URL ---
+const backendURL = "https://chat-1-ume2.onrender.com/chat"; // ✅ Correct endpoint
 
-const backendURL = "https://chat-yvmf.onrender.com/chat"; // Replace with your Render URL
-
-function sendMessage(userMessage) {
-  return fetch(`${API_URL}/chat`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message: userMessage })
-  })
-  .then(res => res.json());
-}
-// Auto-correct function (simple dictionary)
+// --- Auto-correct function (simple dictionary) ---
 function autoCorrect(text) {
   const corrections = {
     "helo": "hello",
@@ -33,7 +25,6 @@ const sendBtn = document.getElementById('send-btn');
 const micBtn = document.getElementById('mic-btn');
 const chatWidget = document.getElementById('chat-widget');
 const chatHeader = document.getElementById('chat-header');
-const container = document.getElementById('chatbox');
 const dictateBtn = document.getElementById('dictate-btn');
 
 // --- Append messages ---
@@ -142,3 +133,4 @@ chatBox.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
 chatBox.style.marginBottom = '10px';
 chatBox.style.flexGrow = '1';
 chatBox.style.scrollBehavior = 'smooth';
+chatBox.style.fontFamily = 'Arial, sans-serif';
