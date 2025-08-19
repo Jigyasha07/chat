@@ -1239,3 +1239,301 @@
 {"question": "how do i withdraw my referral earnings?", "answer": "You can withdraw your earnings through the payment options available in your profile settings."}
 {"question": "can i use my referral earnings to pay for premium features?", "answer": "Yes, you can use your referral earnings to pay for premium features on Hirebie."}
 {"question": "what if i have more questions about the referral program?", "answer": "Feel free to reach out to our support team for any additional questions or clarifications regarding the referral program."}
+{"question": "What is Hirebie?", "answer": "Hirebie is a next-generation IT services company that provides solutions in web development, mobile apps, UI/UX design, branding, digital marketing, cloud, and DevOps."}
+{"question": "What industries does Hirebie serve?", "answer": "Hirebie works with startups, enterprises, and SMEs across industries like SaaS, e-commerce, healthcare, education, and financial services."}
+{"question": "Does Hirebie provide end-to-end development?", "answer": "Yes, Hirebie offers full-cycle development: requirement analysis, design, development, QA, deployment, and post-launch support."}
+{"question": "Where is Hirebie based?", "answer": "Hirebie is a technology services provider operating globally with a focus on delivering scalable digital solutions."}
+{"question": "What makes Hirebie unique?", "answer": "Hirebie combines cutting-edge technology, user-centered design, and business strategy to deliver impactful solutions that help clients grow."}
+
+{"question": "Does Hirebie build SaaS products?", "answer": "Yes, Hirebie specializes in SaaS product development including scalable cloud-native applications."}
+{"question": "Can Hirebie build e-commerce platforms?", "answer": "Yes, Hirebie develops custom e-commerce platforms with features like product catalogs, payments, and order management."}
+{"question": "Does Hirebie create MVPs?", "answer": "Hirebie helps startups by building Minimum Viable Products (MVPs) to test ideas quickly and cost-effectively."}
+{"question": "Does Hirebie provide API development?", "answer": "Yes, Hirebie develops secure and scalable REST and GraphQL APIs."}
+{"question": "Can Hirebie build ERP or CRM systems?", "answer": "Yes, Hirebie builds custom ERP and CRM platforms tailored to business needs."}
+{"question": "Does Hirebie offer mobile app development?", "answer": "Hirebie builds mobile apps for Android and iOS using frameworks like React Native and Flutter."}
+{"question": "Does Hirebie create dashboards?", "answer": "Yes, Hirebie creates custom dashboards for analytics, KPIs, and business intelligence."}
+{"question": "What type of websites does Hirebie build?", "answer": "Hirebie builds blogs, landing pages, portfolios, marketing sites, documentation sites, and social platforms."}
+{"question": "Does Hirebie support third-party integrations?", "answer": "Yes, Hirebie integrates payment gateways, CRMs, cloud storage, and external APIs."}
+{"question": "Does Hirebie provide maintenance after launch?", "answer": "Yes, Hirebie offers long-term support and maintenance for web and mobile apps."}
+
+{"question": "Does Hirebie provide UI/UX design?", "answer": "Yes, Hirebie provides UI/UX design services including wireframes, prototypes, and high-fidelity designs."}
+{"question": "What design tools does Hirebie use?", "answer": "Hirebie uses Figma, Adobe XD, Sketch, Illustrator, and Photoshop."}
+{"question": "Does Hirebie design logos and branding?", "answer": "Yes, Hirebie creates brand identities including logos, typography, and color palettes."}
+{"question": "Does Hirebie provide responsive design?", "answer": "Yes, Hirebie ensures all websites and apps are mobile-friendly and responsive."}
+{"question": "Does Hirebie offer accessibility design?", "answer": "Yes, Hirebie designs with accessibility standards like WCAG and ADA compliance."}
+{"question": "Can Hirebie do A/B testing?", "answer": "Yes, Hirebie supports A/B testing for UX optimization and conversion improvement."}
+{"question": "Does Hirebie provide illustration and graphics?", "answer": "Hirebie creates custom illustrations, infographics, and marketing visuals."}
+{"question": "Does Hirebie handle interactive prototypes?", "answer": "Yes, Hirebie delivers clickable prototypes to showcase user flows before development."}
+{"question": "Does Hirebie design email templates?", "answer": "Yes, Hirebie designs responsive HTML email templates for campaigns."}
+{"question": "Does Hirebie provide presentation design?", "answer": "Yes, Hirebie designs professional presentations and pitch decks for businesses."}
+
+{"question": "Does Hirebie offer SEO services?", "answer": "Yes, Hirebie provides on-page SEO, keyword research, and content optimization."}
+{"question": "Does Hirebie manage social media?", "answer": "Yes, Hirebie manages social media accounts, content calendars, and campaigns."}
+{"question": "Does Hirebie provide content marketing?", "answer": "Hirebie provides blog writing, copywriting, and content strategy."}
+{"question": "Does Hirebie offer email marketing?", "answer": "Yes, Hirebie creates email campaigns, automations, and performance reports."}
+{"question": "Does Hirebie run ad campaigns?", "answer": "Yes, Hirebie runs Google Ads, Facebook Ads, and LinkedIn campaigns."}
+{"question": "Does Hirebie track marketing performance?", "answer": "Hirebie uses tools like Google Analytics, SEMrush, and HubSpot to track performance."}
+{"question": "Does Hirebie do influencer marketing?", "answer": "Yes, Hirebie supports influencer collaborations and PR campaigns."}
+{"question": "Does Hirebie provide video marketing?", "answer": "Yes, Hirebie creates explainer videos, product demos, and marketing clips."}
+{"question": "Does Hirebie provide reputation management?", "answer": "Yes, Hirebie helps businesses manage online reviews and brand reputation."}
+{"question": "Does Hirebie help with lead generation?", "answer": "Yes, Hirebie designs marketing funnels and lead generation strategies."}
+
+{"question": "Does Hirebie offer cloud services?", "answer": "Yes, Hirebie provides cloud hosting, migration, and optimization using AWS, Azure, and GCP."}
+{"question": "Does Hirebie support DevOps?", "answer": "Yes, Hirebie offers CI/CD pipelines, Docker, Kubernetes, and automation solutions."}
+{"question": "Does Hirebie provide cybersecurity services?", "answer": "Yes, Hirebie offers penetration testing, firewalls, and data encryption."}
+{"question": "Does Hirebie provide backup and recovery?", "answer": "Yes, Hirebie provides cloud backup, recovery, and disaster management."}
+{"question": "Does Hirebie optimize performance?", "answer": "Hirebie optimizes apps for scalability, performance, and uptime."}
+{"question": "Does Hirebie support microservices?", "answer": "Yes, Hirebie develops microservices architecture for scalable apps."}
+{"question": "Does Hirebie offer API security?", "answer": "Yes, Hirebie implements OAuth, JWT, and SSL for secure APIs."}
+{"question": "Does Hirebie ensure GDPR compliance?", "answer": "Yes, Hirebie ensures GDPR, HIPAA, and other compliance standards."}
+{"question": "Does Hirebie use containerization?", "answer": "Yes, Hirebie uses Docker and Kubernetes for scalable deployments."}
+{"question": "Does Hirebie provide monitoring tools?", "answer": "Yes, Hirebie integrates tools like Prometheus, Grafana, and ELK stack for monitoring."}
+
+{"question": "What programming languages does Hirebie use?", "answer": "Hirebie’s tech stack includes JavaScript, Python, PHP, Java, and C#."}
+{"question": "Which frontend frameworks does Hirebie use?", "answer": "Hirebie uses React, Next.js, Angular, and Vue.js for frontend development."}
+{"question": "Which backend frameworks does Hirebie use?", "answer": "Hirebie uses Node.js, Django, Laravel, and Spring Boot for backend development."}
+{"question": "Which mobile frameworks does Hirebie use?", "answer": "Hirebie uses React Native, Flutter, Swift, and Kotlin for mobile app development."}
+{"question": "Which databases does Hirebie use?", "answer": "Hirebie works with MySQL, PostgreSQL, MongoDB, and Redis."}
+{"question": "Does Hirebie use cloud platforms?", "answer": "Yes, Hirebie uses AWS, Microsoft Azure, and Google Cloud Platform."}
+{"question": "Does Hirebie use version control?", "answer": "Yes, Hirebie uses Git and GitHub for source code management."}
+{"question": "Does Hirebie use CI/CD pipelines?", "answer": "Yes, Hirebie integrates Jenkins, GitHub Actions, and GitLab CI/CD."}
+{"question": "Does Hirebie use testing frameworks?", "answer": "Yes, Hirebie uses Jest, Mocha, PyTest, and Selenium for automated testing."}
+{"question": "Does Hirebie use analytics tools?", "answer": "Yes, Hirebie integrates Google Analytics, Mixpanel, and custom dashboards."}
+{"question": "Does Hirebie use CMS platforms?", "answer": "Yes, Hirebie works with WordPress, Drupal, and headless CMS solutions."}
+{"question": "Does Hirebie use design systems?", "answer": "Yes, Hirebie builds component libraries with Tailwind, Material UI, and Bootstrap."}
+{"question": "Does Hirebie use APIs?", "answer": "Yes, Hirebie builds and consumes REST and GraphQL APIs."}
+{"question": "Does Hirebie use Agile methodology?", "answer": "Yes, Hirebie follows Agile and Scrum for iterative development."}
+{"question": "Does Hirebie use AI/ML?", "answer": "Yes, Hirebie applies AI and ML for chatbots, analytics, and automation."}
+
+{"question": "Does Hirebie provide internships?", "answer": "Yes, Hirebie offers internships for students and graduates in web development, design, and digital marketing."}
+{"question": "Does Hirebie provide career opportunities?", "answer": "Yes, Hirebie hires developers, designers, marketers, and project managers."}
+{"question": "Does Hirebie provide client support?", "answer": "Yes, Hirebie provides 24/7 client support and ticket-based helpdesk services."}
+{"question": "Does Hirebie offer training?", "answer": "Hirebie provides training workshops for teams on digital tools and technologies."}
+{"question": "Does Hirebie provide documentation?", "answer": "Yes, Hirebie delivers technical documentation and user guides with all projects."}
+{"question": "Does Hirebie offer consultancy?", "answer": "Yes, Hirebie provides IT consultancy for startups and enterprises."}
+{"question": "Does Hirebie work globally?", "answer": "Yes, Hirebie serves clients across the world with remote collaboration."}
+{"question": "Does Hirebie provide cost-effective solutions?", "answer": "Yes, Hirebie delivers scalable solutions tailored to client budgets."}
+{"question": "Does Hirebie customize projects?", "answer": "Yes, Hirebie customizes solutions to meet specific client requirements."}
+{"question": "What is Hirebie’s mission?", "answer": "Hirebie’s mission is to empower businesses with innovative digital solutions that drive growth and transformation."}
+{"question": "web development services", "answer": "Hirebie provides full-stack web development with frontend, backend, databases, and APIs using React, Node.js, Django, and Laravel."}
+{"question": "website development", "answer": "Hirebie builds custom websites including corporate sites, landing pages, portfolios, and blogs with modern design and performance optimization."}
+{"question": "website redesign", "answer": "Hirebie offers complete website redesign with updated UI/UX, mobile responsiveness, and SEO improvements."}
+{"question": "responsive web design", "answer": "All websites by Hirebie are designed to be mobile-friendly and adaptive across devices and screen sizes."}
+{"question": "custom web applications", "answer": "Hirebie develops custom web applications such as dashboards, ERP, CRM, and SaaS platforms."}
+{"question": "mobile app development", "answer": "Hirebie creates mobile apps for Android and iOS using React Native, Flutter, Swift, and Kotlin."}
+{"question": "cross platform apps", "answer": "Hirebie builds cross-platform apps with Flutter and React Native for both Android and iOS from a single codebase."}
+{"question": "progressive web apps", "answer": "Hirebie develops progressive web apps (PWAs) that provide mobile-like experiences directly in browsers."}
+{"question": "e-commerce website", "answer": "Hirebie develops secure e-commerce sites with shopping carts, payment gateways, and product management."}
+{"question": "e-commerce apps", "answer": "Hirebie creates mobile e-commerce apps with integrated payments, customer accounts, and real-time updates."}
+{"question": "SaaS development", "answer": "Hirebie builds scalable SaaS applications with subscription systems, cloud hosting, and API integrations."}
+{"question": "enterprise app development", "answer": "Hirebie develops enterprise-grade apps with authentication, role-based access, and secure integrations."}
+{"question": "app maintenance", "answer": "Hirebie provides ongoing app maintenance, including bug fixes, updates, and performance optimization."}
+{"question": "third party integrations", "answer": "Hirebie integrates tools such as APIs, payment gateways, chat systems, and analytics platforms into apps and websites."}
+{"question": "website hosting and deployment", "answer": "Hirebie assists with hosting, domain setup, and deployment on cloud providers like AWS, Azure, and Google Cloud."}
+{"question": "frontend development", "answer": "Hirebie builds responsive and interactive frontends using React, Next.js, Angular, and Vue.js."}
+{"question": "backend development", "answer": "Hirebie develops scalable backend systems with Node.js, Django, Laravel, and Spring Boot."}
+{"question": "full stack development", "answer": "Hirebie provides full stack solutions combining frontend, backend, and databases."}
+{"question": "react development", "answer": "Hirebie uses React and Next.js to build fast, modern web applications."}
+{"question": "vue development", "answer": "Hirebie builds lightweight applications with Vue.js and Nuxt.js."}
+{"question": "angular development", "answer": "Hirebie develops enterprise solutions with Angular framework."}
+{"question": "node.js development", "answer": "Hirebie builds backend APIs and web apps with Node.js and Express."}
+{"question": "django development", "answer": "Hirebie develops secure web apps using Django and Python."}
+{"question": "laravel development", "answer": "Hirebie builds web applications with Laravel and PHP."}
+{"question": "spring boot development", "answer": "Hirebie develops enterprise apps with Java Spring Boot framework."}
+
+{"question": "flutter app development", "answer": "Hirebie develops cross-platform mobile apps using Flutter."}
+{"question": "react native app development", "answer": "Hirebie builds cross-platform mobile apps with React Native."}
+{"question": "android app development", "answer": "Hirebie creates Android applications with Java and Kotlin."}
+{"question": "ios app development", "answer": "Hirebie develops iOS apps using Swift and Objective-C."}
+{"question": "hybrid app development", "answer": "Hirebie builds hybrid apps combining web and mobile features."}
+
+{"question": "ui design", "answer": "Hirebie provides modern UI design with Figma, Adobe XD, and Sketch."}
+{"question": "ux design", "answer": "Hirebie creates user-centered experiences with prototypes and testing."}
+{"question": "branding services", "answer": "Hirebie offers brand identity design, logos, and style guides."}
+{"question": "graphic design", "answer": "Hirebie creates graphics, illustrations, and visual assets."}
+{"question": "presentation design", "answer": "Hirebie designs professional pitch decks and presentations."}
+
+{"question": "seo services", "answer": "Hirebie provides SEO optimization, keyword research, and ranking improvement."}
+{"question": "content marketing", "answer": "Hirebie develops blog content, copywriting, and content strategy."}
+{"question": "social media marketing", "answer": "Hirebie manages social media campaigns and growth strategies."}
+{"question": "email marketing", "answer": "Hirebie designs and manages email campaigns with automation."}
+{"question": "paid ads", "answer": "Hirebie runs paid ad campaigns on Google, Facebook, and LinkedIn."}
+{"question": "digital strategy", "answer": "Hirebie creates digital marketing strategies for business growth."}
+{"question": "analytics tracking", "answer": "Hirebie integrates Google Analytics and performance dashboards."}
+{"question": "lead generation", "answer": "Hirebie builds funnels and campaigns to generate qualified leads."}
+{"question": "influencer marketing", "answer": "Hirebie collaborates with influencers for brand campaigns."}
+{"question": "reputation management", "answer": "Hirebie helps manage reviews and online brand reputation."}
+
+{"question": "cloud hosting", "answer": "Hirebie deploys and manages cloud apps on AWS, Azure, and GCP."}
+{"question": "cloud migration", "answer": "Hirebie supports migrating applications and data to the cloud."}
+{"question": "devops services", "answer": "Hirebie provides CI/CD pipelines, Docker, and Kubernetes solutions."}
+{"question": "containerization", "answer": "Hirebie uses Docker and Kubernetes for scalable deployment."}
+{"question": "api security", "answer": "Hirebie secures APIs with OAuth, JWT, and SSL encryption."}
+{"question": "gdpr compliance", "answer": "Hirebie ensures applications follow GDPR and HIPAA standards."}
+{"question": "cybersecurity services", "answer": "Hirebie offers penetration testing, audits, and threat protection."}
+{"question": "backup and recovery", "answer": "Hirebie sets up backup and disaster recovery systems."}
+{"question": "app monitoring", "answer": "Hirebie uses Prometheus, Grafana, and ELK stack for monitoring."}
+{"question": "scalable architecture", "answer": "Hirebie designs microservices and cloud-native scalable apps."}
+
+{"question": "database solutions", "answer": "Hirebie works with MySQL, PostgreSQL, MongoDB, and Redis."}
+{"question": "cms development", "answer": "Hirebie builds sites with WordPress, Drupal, and headless CMS."}
+{"question": "custom dashboards", "answer": "Hirebie develops analytics dashboards with real-time data."}
+{"question": "testing and qa", "answer": "Hirebie performs automated and manual testing to ensure quality."}
+{"question": "agile methodology", "answer": "Hirebie follows Agile and Scrum for faster, iterative delivery."}
+{"question": "documentation", "answer": "Hirebie provides user guides, developer docs, and API references."}
+{"question": "project management", "answer": "Hirebie manages projects with tools like Jira, Trello, and Asana."}
+{"question": "consulting services", "answer": "Hirebie provides IT consulting for startups and enterprises."}
+{"question": "training workshops", "answer": "Hirebie offers training sessions on digital tools and technologies."}
+{"question": "career opportunities", "answer": "Hirebie offers jobs and internships in development, design, and marketing."}
+{"question": "how do i get started with hirebie?", "answer": "Visit our website, sign up for an account, and explore our services."}
+{"question": "what is the pricing model for hirebie?", "answer": "Hirebie offers flexible pricing based on project scope, with options for hourly rates or fixed-price contracts."}
+{"question": "can i see hirebie's portfolio?", "answer": "Yes, you can view our portfolio showcasing past projects on our website."}
+{"question": "does hirebie offer free consultations?", "answer": "Yes, Hirebie provides free initial consultations to discuss your project needs."}
+{"question": "how do i contact hirebie for a quote?", "answer": "You can fill out the contact form on our website or email us directly to request a quote."}
+{"question": "what is the typical project timeline with hirebie?", "answer": "Project timelines vary based on complexity, but we aim for efficient delivery while maintaining quality."}
+{"question": "does hirebie provide ongoing support?", "answer": "Yes, Hirebie offers ongoing support and maintenance packages after project completion."}
+{"question": "can hirebie work with my existing team?", "answer": "Yes, Hirebie can collaborate with your in-house team or work independently as needed."}
+{"question": "how does hirebie ensure quality in development?", "answer": "Hirebie follows best practices, conducts code reviews, and performs thorough testing to ensure high quality."}
+{"question": "can i track project progress with hirebie?", "answer": "Yes, Hirebie provides regular updates and uses project management tools for transparency."}
+{"question": "does hirebie sign ndas?", "answer": "Yes, Hirebie is willing to sign Non-Disclosure Agreements (NDAs) to protect your project confidentiality."}
+{"question": "what technologies does hirebie specialize in?", "answer": "Hirebie specializes in modern web and mobile technologies including React, Node.js, Django, Flutter, and more."}
+{"question": "What is the weather like today?", "answer": "You can check today's weather using a weather app or site like Weather.com or your local forecast service."}
+{"question": "What is GPT-4?", "answer": "GPT-4 is a state-of-the-art language model developed by OpenAI, capable of understanding and generating human-like text."}
+{"question": "How do I update my mobile apps?", "answer": "On iOS, go to the App Store and tap your profile to update apps. On Android, use the Google Play Store under 'My apps & games'."}
+{"question": "What is the most streamed song of all time?", "answer": "As of 2025, 'Blinding Lights' by The Weeknd remains one of the most streamed songs ever on platforms like Spotify."}
+{"question": "How do I take a screenshot on Windows?", "answer": "Press 'Windows + Shift + S' to use Snip & Sketch or 'Print Screen' to capture the entire screen."}
+{"question": "Can AI generate music?", "answer": "Yes, AI models like Google's MusicLM or OpenAI's Jukebox can generate music in different styles and genres."}
+{"question": "How do I create a mobile app?", "answer": "You can use platforms like Flutter, React Native, or native tools like Android Studio and Xcode."}
+{"question": "Will it rain tomorrow in New York?", "answer": "Check a real-time weather service like Weather.com or a weather app for the most accurate forecast."}
+{"question": "What are large language models?", "answer": "They are AI models trained on vast text data to understand and generate human language, like GPT-4."}
+{"question": "How can I listen to free music online?", "answer": "You can use apps like Spotify (free tier), YouTube Music, or SoundCloud to stream free music."}
+{"question": "What is the best way to learn coding?", "answer": "Start with online courses on platforms like Codecademy, freeCodeCamp, or Coursera, and practice regularly."}
+{"question": "How do I reset my iPhone?", "answer": "Go to Settings > General > Transfer or Reset iPhone > Erase All Content and Settings."}
+{"question": "What is the latest iPhone model?", "answer": "As of 2025, the latest iPhone models are the iPhone 15 series."}
+{"question": "How do I clear my browser cache?", "answer": "In Chrome, go to Settings > Privacy and security > Clear browsing data. In Firefox, go to Options > Privacy & Security > Cookies and Site Data."}
+{"question": "What is the best way to learn a new language?", "answer": "Use language learning apps like Duolingo, Rosetta Stone, or Babbel, and practice speaking with native speakers."}
+{"question": "How do I set up a home Wi-Fi network?", "answer": "Connect your router to the modem, follow the setup instructions provided by your ISP, and configure your network settings."}
+{"question": "What is blockchain technology?", "answer": "Blockchain is a decentralized digital ledger that records transactions across many computers securely and transparently."}
+{"question": "How do I protect my online privacy?", "answer": "Use strong passwords, enable two-factor authentication, avoid sharing personal information on public platforms, and use a VPN."}
+{"question": "What is the best way to manage stress?", "answer": "Practice mindfulness, exercise regularly, maintain a balanced diet, and ensure you get enough sleep."}
+{"question": "How do I create a budget?", "answer": "List your income and expenses, categorize them, set spending limits, and track your progress monthly using budgeting apps or spreadsheets."}
+{"question": "What is the best way to stay healthy?", "answer": "Eat a balanced diet, exercise regularly, stay hydrated, get enough sleep, and manage stress effectively."}
+{"question": "How do I improve my public speaking skills?", "answer": "Practice regularly, know your material, engage with your audience, and seek feedback. Joining groups like Toastmasters can also help."}
+{"question": "What is the best way to save money?", "answer": "Create a budget, set savings goals, automate transfers to savings accounts, and reduce unnecessary expenses."}
+{"question": "How do I start investing?", "answer": "Educate yourself on investment basics, set financial goals, choose a brokerage, and start with low-cost index funds or ETFs."}
+{"question": "What is the best way to learn photography?", "answer": "Start with online courses, practice regularly, study composition and lighting, and learn to use editing software like Lightroom or Photoshop."}
+{"question": "How do I improve my writing skills?", "answer": "Read regularly, write daily, seek feedback, and study grammar and style guides. Consider joining a writing group or taking online courses."}
+{"question": "What is the best way to learn about artificial intelligence?", "answer": "Start with online courses on platforms like Coursera or edX, read books on AI fundamentals, and follow AI research blogs."}
+{"question": "How do I create a successful YouTube channel?", "answer": "Choose a niche, create quality content consistently, engage with your audience, optimize video titles and descriptions for SEO, and promote your channel on social media."}
+{"question": "What are the benefits of meditation?", "answer": "Meditation can reduce stress, improve focus, enhance emotional well-being, and promote better sleep."}
+{"question": "How do I learn graphic design?", "answer": "Use online resources like Adobe tutorials, take courses on platforms like Skillshare or Udemy, and practice using design software like Adobe Illustrator or Photoshop."}
+{"question": "What is the best way to learn coding for beginners?", "answer": "Start with beginner-friendly languages like Python or JavaScript, use interactive coding platforms like Codecademy or freeCodeCamp, and build small projects to apply your skills."}
+{"question": "How do I stay updated with technology trends?", "answer": "Follow tech news websites, subscribe to newsletters, join online tech communities, and attend webinars or conferences."}
+{"question": "What is the best way to learn data science?", "answer": "Begin with statistics and programming (Python/R), take online courses on platforms like Coursera or DataCamp, and work on real-world datasets."}
+{"question": "How do I improve my time management skills?", "answer": "Use tools like calendars and to-do lists, prioritize tasks using methods like Eisenhower Matrix, set specific goals, and eliminate distractions."}
+{"question": "What is the best way to learn web development?", "answer": "Start with HTML/CSS basics, then learn JavaScript. Use resources like freeCodeCamp or The Odin Project for hands-on practice."}
+{"question": "How do I create a professional resume?", "answer": "Use a clean format, highlight relevant experience and skills, tailor it for each job application, and keep it concise (1-2 pages)."}
+{"question": "weather?", "answer": "You can check today's weather using a weather app or site like Weather.com or your local forecast service."}
+{"question": "gpt-4?", "answer": "GPT-4 is a language model by OpenAI that can understand and generate human-like text."}
+{"question": "app update?", "answer": "To update apps, use the App Store on iOS or Google Play Store on Android."}
+{"question": "top song?", "answer": "As of 2025, 'Blinding Lights' by The Weeknd remains one of the top streamed songs."}
+{"question": "screenshot windows?", "answer": "Press Windows + Shift + S to take a screenshot using Snipping Tool."}
+{"question": "ai music?", "answer": "AI models like MusicLM or Jukebox can generate music using machine learning."}
+{"question": "make app?", "answer": "You can create apps using tools like Flutter, React Native, or native SDKs."}
+{"question": "rain tomorrow?", "answer": "Check a real-time forecast service like AccuWeather or your local weather app."}
+{"question": "language model?", "answer": "A language model is an AI trained to understand and generate human language."}
+{"question": "free music?", "answer": "You can listen to free music on platforms like YouTube, Spotify Free, and SoundCloud."}
+{"question": "install app?", "answer": "Go to your device's app store, search for the app, and tap Install or Get."}
+{"question": "ai chatbot?", "answer": "AI chatbots like ChatGPT can simulate conversations and answer user questions."}
+{"question": "cloud storage?", "answer": "Cloud storage lets you save files online via services like Google Drive or Dropbox."}
+{"question": "best camera phone?", "answer": "Flagship phones like iPhone 15 Pro or Samsung S24 Ultra have top-tier cameras."}
+{"question": "dark mode?", "answer": "Most apps and systems offer dark mode in the display or appearance settings."}
+{"question": "heart rate normal?", "answer": "A normal resting heart rate for adults is typically 60–100 bpm."}
+{"question": "covid symptoms?", "answer": "Common symptoms include fever, cough, fatigue, and loss of taste or smell."}
+{"question": "travel visa?", "answer": "Visa requirements vary by country; check the destination's embassy site for details."}
+{"question": "game of the year?", "answer": "The Game Awards announce the Game of the Year annually; check their site for updates."}
+{"question": "python loop?", "answer": "Use 'for' or 'while' loops in Python to repeat actions."}
+{"question": "iphone release?", "answer": "Apple usually releases new iPhones every September."}
+{"question": "battery health?", "answer": "Check battery health in settings; over time, battery capacity declines."}
+{"question": "google maps offline?", "answer": "You can download maps in the app for offline use under 'Offline maps'."}
+{"question": "screenshot mac?", "answer": "Press Command + Shift + 4 to capture a selected area."}
+{"question": "vpn?", "answer": "A VPN encrypts your internet traffic and hides your IP address."}
+{"question": "bluetooth not working?", "answer": "Try restarting your device and re-pairing the Bluetooth connection."}
+{"question": "android version?", "answer": "Check under Settings > About Phone to see your Android version."}
+{"question": "delete account?", "answer": "Account deletion is usually found in app settings under privacy or account options."}
+{"question": "youtube premium?", "answer": "YouTube Premium removes ads, enables downloads, and allows background play."}
+{"question": "voice assistant?", "answer": "Voice assistants like Siri, Alexa, or Google Assistant respond to spoken commands."}
+{"question": "how do i refer a friend to hirebie?", "answer": "You can refer a friend by sharing your unique referral link found in your profile settings."}
+{"question": "what do i get for referring someone?", "answer": "For each successful referral, you earn a bonus that can be redeemed for cash or Hirebie credits."}
+{"question": "how many people can i refer?", "answer": "There is no limit to the number of people you can refer; the more you refer, the more you earn!"}
+{"question": "is there a time limit for referrals?", "answer": "Referrals must sign up within 30 days of receiving your referral link to qualify for the bonus."}
+{"question": "can i promote my referral link?", "answer": "Yes, you can share your referral link on social media, through email, or any other platform."}
+{"question": "how do i know if my referral was successful?", "answer": "You will receive a notification in your dashboard once your referral signs up and meets the activity requirements."}
+{"question": "can i refer myself?", "answer": "No, self-referrals are not allowed in the Hirebie referral program."}
+{"question": "how often are referral bonuses paid out?", "answer": "Referral bonuses are paid out monthly once the referred user meets the activity criteria."}
+{"question": "can i combine referral earnings with other promotions?", "answer": "Yes, you can combine your referral earnings with other promotions or discounts offered by Hirebie."}
+{"question": "how do i promote my referral link effectively?", "answer": "Share it on your blog, website, social media, or through email newsletters. Engaging content and clear calls to action can help increase sign-ups."}
+{"question": "can i track my referrals?", "answer": "Yes, you can track your referrals and earnings in the referral dashboard on your Hirebie profile."}
+{"question": "weather?", "answer": "You can check the weather using an app like Weather.com or a local forecast site."}
+{"question": "gpt-4?", "answer": "GPT-4 is an advanced language model by OpenAI that understands and generates text."}
+{"question": "app update?", "answer": "To update apps, use the App Store or Google Play Store."}
+{"question": "top song?", "answer": "You can check Spotify or Apple Music charts for the current top songs."}
+{"question": "ai music?", "answer": "AI can generate music using models like MusicLM or Jukebox."}
+{"question": "make app?", "answer": "Use tools like Flutter or React Native to build cross-platform apps."}
+{"question": "install app?", "answer": "Search the app store on your device and tap 'Install' or 'Get'."}
+{"question": "free music?", "answer": "Spotify Free, YouTube, and SoundCloud offer music at no cost."}
+{"question": "dark mode?", "answer": "Most devices and apps have dark mode in appearance settings."}
+{"question": "battery health?", "answer": "Battery health shows how much charge your battery can hold vs. new."}
+{"question": "vpn?", "answer": "A VPN encrypts your internet and masks your IP address for privacy."}
+{"question": "bluetooth not working?", "answer": "Try restarting the device and reconnecting the Bluetooth device."}
+{"question": "rain tomorrow?", "answer": "Check a weather app for the latest forecast for your location."}
+{"question": "language model?", "answer": "A language model is an AI trained to understand and generate text."}
+{"question": "cloud storage?", "answer": "Cloud storage lets you save files online using services like Google Drive."}
+{"question": "app crash?", "answer": "Try force quitting and reopening, or update the app."}
+{"question": "iphone release?", "answer": "Apple typically releases new iPhones each September."}
+{"question": "game of the year?", "answer": "Check The Game Awards website for the latest winner."}
+{"question": "python loop?", "answer": "Use a 'for' or 'while' loop to repeat code in Python."}
+{"question": "free email?", "answer": "Gmail, Outlook, and Yahoo offer free email services."}
+{"question": "screen record?", "answer": "Use built-in screen recording tools in your device’s settings or control panel."}
+{"question": "screenshot mac?", "answer": "Press Command + Shift + 4 to capture part of the screen."}
+{"question": "android version?", "answer": "Go to Settings > About Phone to see your Android version."}
+{"question": "google maps offline?", "answer": "You can download offline maps under the app's 'Offline maps' section."}
+{"question": "heart rate normal?", "answer": "A normal resting heart rate is typically 60–100 beats per minute."}
+{"question": "covid symptoms?", "answer": "Symptoms include fever, cough, fatigue, and loss of taste or smell."}
+{"question": "mental health help?", "answer": "Reach out to a therapist or a mental health helpline in your area."}
+{"question": "travel visa?", "answer": "Check your destination's embassy website for visa requirements."}
+{"question": "passport expiry?", "answer": "Many countries require passports to be valid for 6+ months after arrival."}
+{"question": "flights cheap?", "answer": "Use sites like Skyscanner, Google Flights, or Hopper to find deals."}
+{"question": "currency convert?", "answer": "Use a currency converter app or site like XE.com."}
+{"question": "wifi slow?", "answer": "Restart your router or check for network congestion."}
+{"question": "forgot password?", "answer": "Click 'Forgot Password' on the login screen to reset it."}
+{"question": "delete account?", "answer": "Look under app settings for an option to delete your account."}
+{"question": "job search?", "answer": "Use platforms like LinkedIn, Indeed, or Glassdoor to find jobs."}
+{"question": "resume tips?", "answer": "Keep it clear, tailored, and under 2 pages with recent experience first."}
+{"question": "study online?", "answer": "Try platforms like Coursera, edX, Khan Academy, or Udemy."}
+{"question": "coding learn?", "answer": "Start with free resources like freeCodeCamp, Codecademy, or W3Schools."}
+{"question": "budget tips?", "answer": "Track expenses, set limits, and prioritize saving goals."}
+{"question": "crypto?", "answer": "Cryptocurrency is digital currency like Bitcoin, traded on blockchain networks."}
+{"question": "online banking?", "answer": "Online banking lets you manage accounts via web or mobile apps."}
+{"question": "credit score?", "answer": "It reflects your creditworthiness and affects loan approvals."}
+{"question": "screenshot iphone?", "answer": "Press Side + Volume Up buttons together to take a screenshot."}
+{"question": "zoom background?", "answer": "Go to Settings > Background & Effects to set a virtual background."}
+{"question": "2fa?", "answer": "Two-Factor Authentication adds a second step to verify your identity."}
+{"question": "social media?", "answer": "Platforms like Instagram, TikTok, and X (Twitter) are common social networks."}
+{"question": "streaming?", "answer": "Streaming means watching video or audio content online without downloading it."}
+{"question": "reboot?", "answer": "Reboot means restarting your device to refresh the system."}
+{"question": "storage full?", "answer": "Delete unused apps, media, or clear cache to free up space."}
+{"question": "voice assistant?", "answer": "Siri, Alexa, and Google Assistant respond to spoken commands."}
+{"question": "emoji meaning?", "answer": "You can look up emoji meanings on sites like Emojipedia.org."}
+{"question": "how do i get started with hirebie?", "answer": "Visit our website, sign up for an account, and explore our services."}
+{"question": "what is the pricing model for hirebie?", "answer": "Hirebie offers flexible pricing based on project scope, with options for hourly rates or fixed-price contracts."}
+{"question": "can i see hirebie's portfolio?", "answer": "Yes, you can view our portfolio showcasing past projects on our website."}
+{"question": "does hirebie offer free consultations?", "answer": "Yes, Hirebie provides free initial consultations to discuss your project needs."}
+{"question": "how do i contact hirebie for a quote?", "answer": "You can fill out the contact form on our website or email us directly to request a quote."}
+{"question": "what is the typical project timeline with hirebie?", "answer": "Project timelines vary based on complexity, but we aim for efficient delivery while maintaining quality."}
+{"question": "does hirebie provide ongoing support?", "answer": "Yes, Hirebie offers ongoing support and maintenance packages after project completion."}
+{"question": "can hirebie work with my existing team?", "answer": "Yes, Hirebie can collaborate with your in-house team or work independently as needed."}
+{"question": "how does hirebie ensure quality in development?", "answer": "Hirebie follows best practices, conducts code reviews, and performs thorough testing to ensure high quality."}
+{"question": "can i track project progress with hirebie?", "answer": "Yes, Hirebie provides regular updates and uses project management tools for transparency."}
+{"question": "does hirebie sign ndas?", "answer": "Yes, Hirebie is willing to sign Non-Disclosure Agreements (NDAs) to protect your project confidentiality."}
+{"question": "what technologies does hirebie specialize in?", "answer": "Hirebie specializes in modern web and mobile technologies including React, Node.js, Django, Flutter, and more."}

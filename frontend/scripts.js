@@ -1,7 +1,6 @@
-// =====================
-// Backend URL
-// =====================
-const API_URL = "https://chat-6en7.onrender.com";
+// Force local API for now
+const API_URL = "http://127.0.0.1:5000"; // Local backend
+// const API_URL = "https://your-backend.onrender.com"; // For deployed backend
 
 // =====================
 // DOM Elements
@@ -26,8 +25,8 @@ function displayMessage(sender, message) {
 // =====================
 // Send text message to backend
 // =====================
-function sendMessage() {
-  const message = inputBox.value.trim();
+function sendMessage(text = null) {
+  const message = text || inputBox.value.trim();
   if (!message) return;
   displayMessage("user", message);
   inputBox.value = "";
@@ -43,7 +42,7 @@ function sendMessage() {
 }
 
 // Send button click
-sendBtn.onclick = sendMessage;
+sendBtn.onclick = () => sendMessage();
 
 // Enter key press
 inputBox.addEventListener("keypress", e => {
@@ -65,13 +64,15 @@ micBtn.onclick = async () => {
     let chunks = [];
 
     mediaRecorder.ondataavailable = e => chunks.push(e.data);
+
     mediaRecorder.onstart = () => {
       recordingIndicator.style.display = "inline";
       console.log("🎤 Recording started...");
+      micBtn.textContent = "Stop";
     };
+
     mediaRecorder.onstop = async () => {
       recordingIndicator.style.display = "none";
-
       const blob = new Blob(chunks, { type: "audio/webm" });
       chunks = [];
 
@@ -79,24 +80,35 @@ micBtn.onclick = async () => {
       formData.append("audio", blob, "voice.webm");
 
       try {
-        const res = await fetch(`${API_URL}/dictate`, { method: "POST", body: formData });
+        const res = await fetch(`${API_URL}/dictate`, {
+          method: "POST",
+          body: formData
+        });
         const data = await res.json();
+
         if (data.text) {
-          inputBox.value = data.text;       // Fill input box
-          sendMessage();                     // Auto-send
+          sendMessage(data.text); // Auto-send transcribed text
         } else {
-          alert("⚠️ Dictation failed: " + (data.error || "Unknown error"));
+          displayMessage("bot", "⚠️ Could not transcribe audio.");
         }
       } catch (err) {
-        console.error(err);
-        alert("⚠️ Failed to send audio to backend.");
+        console.error("Dictation error:", err);
+        displayMessage("bot", "⚠️ Dictation request failed.");
       }
+
+      // Reset mic button
+      micBtn.textContent = "🎤 Dictate";
+      micBtn.onclick = micBtn.onclick; // restore original handler
     };
 
-    // Record 5 seconds
     mediaRecorder.start();
-    setTimeout(() => mediaRecorder.stop(), 5000);
 
+    // Stop recording when mic button clicked again
+    micBtn.onclick = () => {
+      mediaRecorder.stop();
+    };
   } catch (err) {
-    console.error(err);
-    alert("⚠️ Could not access microphone. P
+    console.error("Microphone error:", err);
+    alert("⚠️ Could not access microphone.");
+  }
+};

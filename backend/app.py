@@ -1,16 +1,13 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import json, os, requests
+import json, os, requests, difflib
 from dotenv import load_dotenv
-import difflib
 
 app = Flask(__name__)
 CORS(app)
 
 # ---------------- Settings ----------------
-USE_OFFLINE_MODE = True
 FAQ_FILE = os.path.join(os.path.dirname(__file__), "faq.jsonl")
-
 load_dotenv()
 HF_TOKEN = os.getenv("HF_API_KEY")
 MODEL_NAME = "gpt2"
@@ -23,10 +20,8 @@ def load_faq():
     if os.path.exists(FAQ_FILE):
         with open(FAQ_FILE, "r", encoding="utf-8") as f:
             for line in f:
-                try:
-                    items.append(json.loads(line))
-                except json.JSONDecodeError:
-                    pass
+                try: items.append(json.loads(line))
+                except json.JSONDecodeError: pass
     return items
 
 def simple_similarity(a: str, b: str) -> float:
@@ -34,19 +29,17 @@ def simple_similarity(a: str, b: str) -> float:
 
 def faq_answer(user_message: str) -> str | None:
     data = load_faq()
-    if not data:
-        return None
     best, best_score = None, 0.0
     for item in data:
         q, a = item.get("question", ""), item.get("answer", "")
         score = simple_similarity(user_message, q)
         if score > best_score:
             best_score, best = score, a
-    return best if best_score >= 0.6 else None
+    return best if best_score >= 0.5 else None
 
 def query_hf_model(prompt: str) -> str:
     if not HF_TOKEN:
-        return "⚠️ Hugging Face API key missing. Using offline mode."
+        return "⚠️ Hugging Face API key missing."
     try:
         response = requests.post(API_URL, headers=HEADERS, json={"inputs": prompt}, timeout=30)
         if response.status_code != 200:
@@ -58,7 +51,6 @@ def query_hf_model(prompt: str) -> str:
     except Exception as e:
         return f"⚠️ Error connecting to Hugging Face: {e}"
 
-# ---------------- Proactive Suggestions -----------------
 def proactive_suggestion(user_message: str) -> str | None:
     triggers = {
         "hello": "Hi there! How can I assist you today?",
@@ -79,44 +71,52 @@ def proactive_suggestion(user_message: str) -> str | None:
 def home():
     return "✅ Chatbot API running"
 
-@app.route("/", methods=["POST"])
-def root_chat():
-    return chat()
-
 @app.route("/chat", methods=["POST"])
 def chat():
-    user_message = request.json.get("message", "")
-    answer = faq_answer(user_message)
-    if answer:
-        return jsonify({"response": answer})
-    
-    suggestion = proactive_suggestion(user_message)
-    if suggestion:
-        return jsonify({"response": suggestion})
-    
-    return jsonify({"response": "I'm not sure I understand. Can you rephrase?"})
+    try:
+        data = request.get_json(silent=True) or {}
+        user_message = data.get("message", "")
+        if not user_message:
+            return jsonify({"response": "⚠️ No message received"}), 400
 
-@app.route("/generate", methods=["POST"])
-def generate():
-    user_message = request.json.get("message", "")
-    if not user_message:
-        return jsonify({"response": "Please provide a message."})
-    
-    answer = faq_answer(user_message)
-    if answer:
-        return jsonify({"response": answer})
-    
-    suggestion = proactive_suggestion(user_message)
-    if suggestion:
-        return jsonify({"response": suggestion})
-    
-    generated_text = query_hf_model(user_message)
-    return jsonify({"response": generated_text})
+        answer = faq_answer(user_message)
+        if answer: return jsonify({"response": answer})
+
+        suggestion = proactive_suggestion(user_message)
+        if suggestion: return jsonify({"response": suggestion})
+
+        generated_text = query_hf_model(user_message)
+        return jsonify({"response": generated_text})
+    except Exception as e:
+        return jsonify({"response": f"⚠️ Internal server error: {str(e)}"}), 500
 
 @app.route("/faq", methods=["GET"])
 def get_faq():
-    faq_data = load_faq()
-    return jsonify(faq_data)
+    return jsonify(load_faq())
+
+@app.route("/dictate", methods=["POST"])
+def dictate():
+    if "audio" not in request.files:
+        return jsonify({"error": "No audio uploaded"}), 400
+
+    audio_file = request.files["audio"]
+    headers = {"Authorization": f"Bearer {HF_TOKEN}"} if HF_TOKEN else {}
+    files = {"file": (audio_file.filename, audio_file.stream, audio_file.mimetype)}
+
+    try:
+        response = requests.post(
+            "https://api-inference.huggingface.co/models/openai/whisper-base",
+            headers=headers,
+            files=files,
+            timeout=60
+        )
+        data = response.json()
+        if "text" in data:
+            return jsonify({"text": data["text"]})
+        else:
+            return jsonify({"error": data}), 500
+    except Exception as e:
+        return jsonify({"error": f"Failed to reach ASR model: {str(e)}"}), 500
 
 # ---------------- Run ---------------------
 if __name__ == "__main__":

@@ -134,6 +134,11 @@ body {
   font-size: 14px;
 }
 
+.chat-footer input:focus {
+  border-color: #5a46f0;
+  box-shadow: 0 0 5px rgba(90, 70, 240, 0.3);
+}
+
 .chat-footer button {
   padding: 8px 12px;
   border: none;
@@ -165,8 +170,4 @@ body {
   .chat-footer button {
     width: 100%;
   }
-}
-.chat-footer input:focus {
-  border-color: #5a46f0;
-  box-shadow: 0 0 5px rgba(90, 70, 240, 0.3);
 }
