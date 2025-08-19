@@ -1,5 +1,7 @@
-// --- Backend URL ---
-const backendURL = "https://chat-1-ume2.onrender.com/chat"; // ✅ Correct endpoint
+// --- Backend URL (auto-detect: local vs deployed) ---
+const backendURL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+  ? "http://127.0.0.1:5000/chat"
+  : "https://chat-yvmf.onrender.com/chat";
 
 // --- Auto-correct function (simple dictionary) ---
 function autoCorrect(text) {
@@ -25,7 +27,6 @@ const sendBtn = document.getElementById('send-btn');
 const micBtn = document.getElementById('mic-btn');
 const chatWidget = document.getElementById('chat-widget');
 const chatHeader = document.getElementById('chat-header');
-const dictateBtn = document.getElementById('dictate-btn');
 
 // --- Append messages ---
 function appendMessage(sender, text) {
@@ -98,20 +99,23 @@ if ('webkitSpeechRecognition' in window) {
 
   recognition.onerror = function(event) {
     console.error("Speech recognition error:", event.error);
+    appendMessage("bot", "⚠️ Dictation error: " + event.error);
   };
 
   recognition.onend = () => {
     isListening = false;
+    appendMessage("bot", "✅ Done listening.");
   };
 } else {
   micBtn.disabled = true;
-  micBtn.title = "Voice input not supported";
+  micBtn.title = "Voice input not supported in this browser.";
 }
 
 micBtn.addEventListener('click', () => {
   if (recognition && !isListening) {
     isListening = true;
     recognition.start();
+    appendMessage("bot", "🎙️ Listening...");
   }
 });
 
