@@ -79,7 +79,6 @@ def proactive_suggestion(user_message: str) -> str | None:
 def home():
     return "✅ Chatbot API running"
 
-# ✅ Allow POST / as fallback
 @app.route("/", methods=["POST"])
 def root_chat():
     return chat()
@@ -118,31 +117,6 @@ def generate():
 def get_faq():
     faq_data = load_faq()
     return jsonify(faq_data)
-
-# ✅ NEW: Dictation (speech-to-text)
-@app.route("/dictate", methods=["POST"])
-def dictate():
-    if "audio" not in request.files:
-        return jsonify({"error": "No audio uploaded"}), 400
-
-    audio_file = request.files["audio"]
-
-    # Send audio to Hugging Face Whisper model
-    response = requests.post(
-        "https://api-inference.huggingface.co/models/openai/whisper-base",
-        headers={"Authorization": f"Bearer {HF_TOKEN}"},
-        data=audio_file.read()
-    )
-
-    try:
-        data = response.json()
-    except Exception as e:
-        return jsonify({"error": f"Invalid response from ASR model: {str(e)}"}), 500
-
-    if "text" in data:
-        return jsonify({"text": data["text"]})
-    else:
-        return jsonify({"error": data})
 
 # ---------------- Run ---------------------
 if __name__ == "__main__":
