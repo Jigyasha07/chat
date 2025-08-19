@@ -1,7 +1,7 @@
 // =====================
 // Backend URL
 // =====================
-const API_URL = "https://chat-yvmf.onrender.com";
+const API_URL = "https://chat-6en7.onrender.com";
 
 // =====================
 // DOM Elements
