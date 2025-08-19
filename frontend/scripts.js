@@ -1,10 +1,14 @@
-let backendURL;
-if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-  backendURL = "http://127.0.0.1:5000/chat"; // Local testing
-} else {
-  backendURL = "https://chat-h67h.onrender.com/chat"; // Replace with your Render URL
-}
 
+const backendURL = "https://chat-yvmf.onrender.com/chat"; // Replace with your Render URL
+
+function sendMessage(userMessage) {
+  return fetch(`${API_URL}/chat`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: userMessage })
+  })
+  .then(res => res.json());
+}
 // Auto-correct function (simple dictionary)
 function autoCorrect(text) {
   const corrections = {

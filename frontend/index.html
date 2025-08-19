@@ -125,7 +125,7 @@ function sendMessage() {
   appendMessage("You", message);
   input.value = "";
 
-  fetch("http://localhost:5000/chat", {
+  fetch("https://chat-yvmf.onrender.com", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message })
