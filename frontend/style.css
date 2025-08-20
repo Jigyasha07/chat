@@ -71,7 +71,7 @@
 /* --- Your original mobile rules (kept), plus safe mobile sizing --- */
 @media (max-width:auto) {
   .chat-container {
-    width: 92vw !important;
+    width: auto !important;
     height: 70vh !important;
     right: 4vw;
     bottom: 12px;
