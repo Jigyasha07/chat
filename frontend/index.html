@@ -1,136 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hirebie AI Chatbot</title>
-<style>
-  body { background: #f8f9ff; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-  #chat-toggle { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; border-radius: 50%; background: #8B5CF6; color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 9999; border: none; transition: all 0.3s; }
-  #chat-toggle:hover { transform: scale(1.05); }
-  #chat-container { position: fixed; bottom: 90px; right: 20px; width: 380px; max-height: 500px; background: white; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.15); display: flex; flex-direction: column; transform: translateY(20px); opacity: 0; transition: all 0.3s ease; overflow: hidden; }
-  #chat-container.active { transform: translateY(0); opacity: 1; }
-  .chat-header { background: #8B5CF6; color: white; padding: 12px; display: flex; justify-content: space-between; align-items: center; }
-  .chat-messages { flex: 1; padding: 12px; overflow-y: auto; background: #F9FAFB; }
-  .user-message { background: #8B5CF6; color: white; padding: 10px; border-radius: 18px 18px 4px 18px; margin-bottom: 10px; max-width: 80%; align-self: flex-end; }
-  .bot-message { background: #fff; color: #1F2937; padding: 10px; border-radius: 18px 18px 18px 4px; margin-bottom: 10px; max-width: 80%; align-self: flex-start; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-  .typing-indicator { font-style: italic; opacity: 0.6; margin-bottom: 10px; }
-  .chat-footer { display: flex; gap: 8px; padding: 8px; border-top: 1px solid #ddd; background: #fff; }
-  .chat-footer input { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 6px; outline: none; font-size: 14px; }
-  .chat-footer button { padding: 8px 12px; border: none; background: #8B5CF6; color: white; border-radius: 6px; cursor: pointer; }
-  .chat-footer button:hover { background: #7C3AED; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Chatbot</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<button id="chat-toggle">💬</button>
+  <div class="chat-container">
+    <div class="messages"></div>
 
-<div id="chat-container">
-  <div class="chat-header">
-    <span>Hirebie Assistant</span>
-    <button id="chat-close">✖</button>
+    <div class="input-area">
+      <input class="chat-input" type="text" placeholder="Type a message..." />
+      <button class="mic-btn" title="Speak">🎤</button>
+      <button class="send-btn" title="Send">Send</button>
+    </div>
   </div>
-  <div class="chat-messages" id="chat-messages"></div>
-  <div class="chat-footer">
-    <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off">
-    <button id="mic-button">🎤</button>
-    <button id="send-button">Send</button>
-     </div>
-</div>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const chatToggle = document.getElementById('chat-toggle');
-    const chatContainer = document.getElementById('chat-container');
-    const chatClose = document.getElementById('chat-close');
-    const chatMessages = document.getElementById('chat-messages');
-    const userInput = document.getElementById('user-input');
-    const sendButton = document.getElementById('send-button');
-    const micButton = document.getElementById('mic-button');
-
-    let isChatOpen = false;
-    let isListening = false;
-    let recognition;
-    const API_URL = "https://chat-ewrn.onrender.com";
-
-    chatToggle.addEventListener('click', () => {
-        isChatOpen = !isChatOpen;
-        chatContainer.classList.toggle('active', isChatOpen);
-        if(isChatOpen) userInput.focus();
-    });
-
-    chatClose.addEventListener('click', () => {
-        isChatOpen = false;
-        chatContainer.classList.remove('active');
-    });
-
-    function addMessage(sender, text){
-        const div = document.createElement('div');
-        div.className = sender === 'user' ? 'user-message' : 'bot-message';
-        div.textContent = text;
-        chatMessages.appendChild(div);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    async function sendMessage(text=null){
-        const message = text || userInput.value.trim();
-        if(!message) return;
-        addMessage('user', message);
-        userInput.value = '';
-        const typing = document.createElement('div');
-        typing.className = 'typing-indicator';
-        typing.textContent = 'Bot is typing...';
-        chatMessages.appendChild(typing);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-
-        try{
-            const res = await fetch(`${API_URL}/chat`,{
-                method:'POST',
-                headers:{'Content-Type':'application/json'},
-                body: JSON.stringify({message})
-            });
-            const data = await res.json();
-            typing.remove();
-            addMessage('bot', data.response);
-        } catch(e){
-            typing.remove();
-            addMessage('bot','⚠️ Something went wrong.');
-            console.error(e);
-        }
-    }
-
-    sendButton.addEventListener('click', ()=>sendMessage());
-    userInput.addEventListener('keypress', e=>{ if(e.key==='Enter') sendMessage(); });
-
-    micButton.addEventListener('click', ()=>{
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        if(!SpeechRecognition){ alert("⚠️ Browser doesn't support speech recognition."); return; }
-
-        if(!recognition){
-            recognition = new SpeechRecognition();
-            recognition.continuous = false;
-            recognition.interimResults = false;
-            recognition.onresult = (event)=>{
-                const transcript = event.results[0][0].transcript;
-                userInput.value = transcript;
-                sendMessage(transcript);
-            };
-            recognition.onerror = (event)=>{
-                console.error(event.error);
-                addMessage('bot',"⚠️ I couldn't understand your voice.");
-            };
-            recognition.onend = ()=>{ isListening=false; updateMic(); };
-        }
-
-        if(isListening){ recognition.stop(); isListening=false; }
-        else { recognition.start(); isListening=true; }
-        updateMic();
-    });
-
-    function updateMic(){ micButton.style.opacity = isListening?'0.6':'1'; }
-
-});
-</script>
-
+  <script src="scripts.js"></script>
 </body>
 </html>
