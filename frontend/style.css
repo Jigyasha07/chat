@@ -10,7 +10,7 @@
   position: fixed;
   right: 20px;
   bottom: 20px;
-  width: min(350px, 90vw);
+  width: min(auto, 400px);
   height: min(500px, 80vh);
   background: #fff;
   border-radius: 12px;
