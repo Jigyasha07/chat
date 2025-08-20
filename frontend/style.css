@@ -1,64 +1,81 @@
-/* Chat container main style */
+/* Make sizing predictable */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Chat container base */
 .chat-container {
   position: fixed;
-  bottom: 20px;
   right: 20px;
-  width: 350px;
-  height: 500px;
+  bottom: 20px;
+  width: min(350px, 90vw);
+  height: min(500px, 80vh);
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  z-index: 9999;
 }
 
+/* Messages area */
 .chat-container .messages {
   flex: 1;
   padding: 10px;
   overflow-y: auto;
   font-size: 15px;
+  line-height: 1.4;
 }
 
+/* Input area */
 .chat-container .input-area {
   display: flex;
-  border-top: 1px solid #ddd;
+  gap: 6px;
+  border-top: 1px solid #e5e5e5;
   padding: 8px;
-  gap: 5px;
+  align-items: center;
 }
 
 .chat-container .chat-input {
   flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 15px;
 }
 
 .chat-container button {
   padding: 10px 14px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #7a4efc;
   color: #fff;
   cursor: pointer;
   font-size: 15px;
-  transition: 0.3s;
+  transition: transform .05s ease, background .2s ease;
+  flex-shrink: 0;
+}
+
+.chat-container button:active {
+  transform: scale(0.98);
 }
 
 .chat-container button:hover {
   background: #5c34c7;
 }
 
-/* ---- Mobile responsiveness ---- */
+/* --- Your original mobile rules (kept), plus safe mobile sizing --- */
 @media (max-width: 600px) {
   .chat-container {
-    width: 90% !important;
-    height: 70% !important;
+    width: 92vw !important;
+    height: 70vh !important;
+    right: 4vw;
+    bottom: 12px;
     font-size: 14px;
-    right: 5%;
-    bottom: 10px;
   }
 
   .chat-container input,
