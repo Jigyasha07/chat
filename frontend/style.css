@@ -8,13 +8,13 @@
 /* Chat container base */
 .chat-container {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: min(auto, 400px);
-  height: min(500px, 80vh);
+  right: 16px;
+  bottom: 16px;
+  width: min(100%, 320px);
+  height: min(400px, 70vh);
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -25,67 +25,66 @@
 /* Messages area */
 .chat-container .messages {
   flex: 1;
-  padding: 10px;
+  padding: 8px;
   overflow-y: auto;
-  font-size: 15px;
-  line-height: 1.4;
+  font-size: 14px;
+  line-height: 1.3;
 }
 
 /* Input area */
 .chat-container .input-area {
   display: flex;
-  gap: 6px;
+  gap: 4px;
   border-top: 1px solid #e5e5e5;
-  padding: 8px;
+  padding: 6px;
   align-items: center;
 }
 
 .chat-container .chat-input {
   flex: 1;
-  padding: 10px;
+  padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 15px;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
 .chat-container button {
-  padding: 10px 14px;
+  padding: 8px 12px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   background: #7a4efc;
   color: #fff;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 14px;
   transition: transform .05s ease, background .2s ease;
   flex-shrink: 0;
 }
 
 .chat-container button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
 .chat-container button:hover {
   background: #5c34c7;
 }
 
-/* --- Your original mobile rules (kept), plus safe mobile sizing --- */
-@media (max-width:auto) {
+/* Mobile tweaks */
+@media (max-width: 480px) {
   .chat-container {
-    width: auto !important;
-    height: 70vh !important;
+    width: 92vw !important;
+    height: 65vh !important;
     right: 4vw;
-    bottom: 12px;
-    font-size: 14px;
+    bottom: 10px;
+    font-size: 13px;
   }
 
-  .chat-container input,
+  .chat-container .chat-input,
   .chat-container button {
-    font-size: 14px;
-    padding: 8px;
+    font-size: 13px;
+    padding: 6px;
   }
 
   .chat-container .messages {
     max-height: 60%;
-    overflow-y: auto;
   }
 }
